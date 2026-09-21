@@ -31,6 +31,7 @@ export class HeaderView {
         attributes: {
           ...genreButtonParams.attributes,
           "data-name": movieGenre.name,
+          "data-id": movieGenre.id,
         },
       }).getTag();
 

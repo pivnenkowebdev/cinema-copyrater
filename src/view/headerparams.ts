@@ -24,6 +24,7 @@ export const genreButtonParams = {
   classList: [listGenres.genreButton],
   attributes: {
     "data-name": "",
+    "data-id": "",
   },
   text: "",
 };

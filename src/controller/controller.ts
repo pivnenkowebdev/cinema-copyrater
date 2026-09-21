@@ -25,8 +25,15 @@ export class Controller {
   }
 
   private setListeners(): void {
-    this.view.header?.headerElem.addEventListener("click", (event) => {
-      console.log(event);
+    this.view.header?.headerElem.addEventListener("click", async (event) => {
+      const isElement = event.target as HTMLElement;
+      if (isElement) {
+        const isButton = isElement.closest("[data-name]");
+        if (isButton) {
+          const isGenreId = isButton.getAttribute("data-id");
+          this.model.fetchMovies(isGenreId);
+        }
+      }
     });
   }
 }
