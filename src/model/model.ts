@@ -1,7 +1,12 @@
 export class Model {
-  constructor() {}
+  genreData;
+  currentMovies;
+  constructor() {
+    this.genreData = null;
+    this.currentMovies = null;
+  }
 
-  async fetchData() {
+  async fetchGenres() {
     const options = {
       method: "GET",
       headers: {
@@ -20,12 +25,13 @@ export class Model {
     }
 
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
+    this.genreData = data;
 
-    return data;
+    //return data;
   }
 
-  async fetchMovies(movieId) {
+  async fetchMovies(movieId: number) {
     const options = {
       method: "GET",
       headers: {
@@ -44,8 +50,8 @@ export class Model {
     }
 
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
 
-    return data;
+    this.currentMovies = data;
   }
 }

@@ -1,5 +1,6 @@
 import { HeaderView } from "./headerview";
 import type { genre } from "../types/types";
+import { Movies } from "./moviesview";
 
 export class View {
   app: HTMLElement | null;
@@ -13,5 +14,9 @@ export class View {
     this.header = new HeaderView(genres);
 
     this.app?.append(this.header.headerElem);
+  }
+  renderMovies(movies) {
+    this.movieList = new Movies(movies);
+    console.log(this.movieList);
   }
 }

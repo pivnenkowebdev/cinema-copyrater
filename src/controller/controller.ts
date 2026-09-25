@@ -14,9 +14,9 @@ export class Controller {
 
   private async init(): Promise<void> {
     try {
-      const data = await this.model.fetchData();
+      await this.model.fetchGenres();
 
-      this.view.build(data.genres);
+      this.view.build(this.model.genreData.genres);
 
       this.setListeners();
     } catch (error) {
@@ -32,6 +32,7 @@ export class Controller {
         if (isButton) {
           const isGenreId = isButton.getAttribute("data-id");
           this.model.fetchMovies(isGenreId);
+          this.view.renderMovies(this.model.currentMovies);
         }
       }
     });
