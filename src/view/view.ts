@@ -5,6 +5,7 @@ import { Movies } from "./moviesview";
 export class View {
   app: HTMLElement | null;
   header: HeaderView | null = null;
+  movieList;
 
   constructor() {
     this.app = document.querySelector("#app");
@@ -15,8 +16,10 @@ export class View {
 
     this.app?.append(this.header.headerElem);
   }
-  renderMovies(movies) {
+  async renderMovies(movies) {
     this.movieList = new Movies(movies);
     console.log(this.movieList);
+
+    //this.movieList.createListCards()
   }
 }

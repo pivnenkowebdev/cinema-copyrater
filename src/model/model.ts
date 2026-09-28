@@ -53,5 +53,6 @@ export class Model {
     //console.log(data);
 
     this.currentMovies = data;
+    console.log(this.currentMovies);
   }
 }

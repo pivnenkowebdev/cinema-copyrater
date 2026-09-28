@@ -32,7 +32,7 @@ export class Controller {
         if (isButton) {
           const isGenreId = isButton.getAttribute("data-id");
           this.model.fetchMovies(isGenreId);
-          this.view.renderMovies(this.model.currentMovies);
+          await this.view.renderMovies(this.model.currentMovies);
         }
       }
     });
