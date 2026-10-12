@@ -28,5 +28,21 @@ export const movieTitleWrapperParams = {
   tagName: "div",
   classList: [filmCards.wrapper],
   attributes: {},
+};
+export const ratingWrapperParams = {
+  tagName: "div",
+  classList: [filmCards.rating_wrapper],
+  attributes: {},
+};
+export const ratingStarParams = {
+  tagName: "img",
+  classList: [filmCards.rating_star],
+  attributes: { src: "/star.svg" },
+};
+
+export const ratingTextParams = {
+  tagName: "p",
+  classList: [filmCards.rating_text],
+  attributes: {},
   text: "",
 };
